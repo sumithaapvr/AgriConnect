@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>விவசாயி மற்றும் வாங்குபவர் அட்டை</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('static/img/s2.png');
+            display: flex;
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 150px;
+            padding-left: 60px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            border: 2px solid beige;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 180px;
+            height: 20pt;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .card h1 {
+            font-size: 30px;
+            color: white;
+            padding-bottom:15px ;
+            text-align: center; 
+            margin: 0; 
+
+        }
+        .card h1:hover{
+            color:#EBEF95;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Buyer Card -->
+        <div class="card" onclick="window.location.href='{{ url_for('buyer') }}'">
+            <h1>வாங்குபவர்</h1>
+        </div>
+        <!-- Farmer Card -->
+        <div class="card" onclick="window.location.href='{{ url_for('farmer') }}'">
+            <h1>விவசாயி</h1>
+
+        </div>
+
+    </div>
+</body>
+</html>

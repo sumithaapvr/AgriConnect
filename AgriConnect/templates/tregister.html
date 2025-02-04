@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தானியங்கள் மற்றும் மசாலா அட்டைகள்</title>
+    <!-- Include Font Awesome for the world icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .world-icon {
+            font-size: 40px;
+            color: #28a745;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        /* Card Container */
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Registration Form */
+        #registration-form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            display: none; /* Initially hidden */
+        }
+
+        #registration-form h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:read-only {
+            background-color: #e9e9e9;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Media Query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+
+            #registration-form {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- World Icon at the top with onclick -->
+    <div class="world-icon" onclick="worldIconClick()">
+        <i class="fas fa-globe"></i>
+    </div>
+
+    <h1>தானியங்கள் மற்றும் மசாலா அட்டைகள்</h1>
+    <div class="card-container" id="card-container">
+        <div class="card" onclick="showRegistrationForm('மஞ்சள்')">
+            <img src="/static/img/turmeric.jpg" alt="மஞ்சள்">
+            <h2>மஞ்சள்</h2>
+            <p>மஞ்சள் ஒரு சுவையூட்டும் மற்றும் மருத்துவ குணமுள்ள மசாலாவாகும்.</p>
+            <button type="button" onclick="showRegistrationForm('மஞ்சள்')">பதிவு செய்ய</button>
+        </div>
+        <div class="card" onclick="showRegistrationForm('கோதுமை')">
+            <img src="/static/img/wheat.jpg" alt="கோதுமை">
+            <h2>கோதுமை</h2>
+            <p>கோதுமை உலகளவில் முக்கியமான தானியமாக கருதப்படுகிறது.</p>
+            <button type="button" onclick="showRegistrationForm('கோதுமை')">பதிவு செய்ய</button>
+        </div>
+        <div class="card" onclick="showRegistrationForm('அரிசி')">
+            <img src="/static/img/rice.jpg" alt="அரிசி">
+            <h2>அரிசி</h2>
+            <p>அரிசி தெற்காசியர்களின் முக்கிய உணவாக உள்ளது.</p>
+            <button type="button" onclick="showRegistrationForm('அரிசி')">பதிவு செய்ய</button>
+        </div>
+    </div>
+
+    <div id="registration-form">
+        <h2>பதிவு செய்யவும்</h2>
+        <form action="register" method="POST" enctype="multipart/form-data">
+            <label for="type">வகை:</label>
+            <input type="text" id="type" name="type" readonly>
+
+            <label for="quantity">அளவு:(கிலோ)</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="price">விலை:(1கிலோ)</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="sample-photo">உதாரண புகைப்படம் பதிவேற்றவும்:</label>
+            <input type="file" id="sample-photo" name="sample_photo" required>
+
+            <button type="submit">சமர்ப்பிக்கவும்</button>
+        </form>
+    </div>
+
+    <script>
+         function worldIconClick() {
+        window.location.href = "/orders";
+    }
+
+        function showRegistrationForm(type) {
+            document.getElementById('type').value = type;
+            document.getElementById('registration-form').style.display = 'block';
+            document.getElementById('card-container').style.display = 'none'; // Hide product cards
+        }
+    </script>
+</body>
+</html>

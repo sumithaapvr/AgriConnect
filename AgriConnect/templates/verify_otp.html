@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP சரிபார்த்தல்</title>
+</head>
+<body>
+    <h1>OTP சரிபார்த்தல்</h1>
+    <form action="{{ url_for('verify_otp') }}" method="POST">
+        <label for="otp">OTP:</label><br>
+        <input type="text" id="otp" name="otp" placeholder="உங்கள் OTP-ஐ உள்ளிடவும்"><br><br>
+        <button type="submit">சரிபார்க்க</button>
+    </form>
+</body>
+</html>

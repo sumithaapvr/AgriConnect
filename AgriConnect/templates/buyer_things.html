@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தானியங்கள் மற்றும் மசாலா அட்டைகள்</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function scrollToProducts() {
+            const productsSection = document.getElementById('products-section');
+            productsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <h1>தானியங்கள் மற்றும் மசாலா அட்டைகள்</h1>
+    <div class="card-container">
+        <div class="card">
+            <a href="/products"><img src="static/img/turmeric.jpg" alt="மஞ்சள்"></a>
+            <h2>மஞ்சள்</h2>
+            <p>மஞ்சள் ஒரு சுவையூட்டும் மற்றும் மருத்துவ குணமுள்ள மசாலாவாகும்.</p>
+        </div>
+
+        <div class="card">
+            <a href="/product"><img src="static/img/wheat.jpg" alt="கோதுமை"></a>
+            <h2>கோதுமை</h2>
+            <p>கோதுமை உலகளவில் முக்கியமான தானியமாக கருதப்படுகிறது.</p>
+        </div>
+
+        <div class="card">
+            <a href="/products"><img src="static/img/rice.jpg" alt="அரிசி"></a>
+            <h2>அரிசி</h2>
+            <p>அரிசி தெற்காசியர்களின் முக்கிய உணவாக உள்ளது.</p>
+        </div>
+    </div>
+<!-- 
+<div class="card-container">
+        {% if products %}
+            {% for product in products %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='uploads/' ~ product.sample_photo_path) }}" alt="{{ product.type }}">
+                    <h2>{{ product.type }}</h2>
+                    <p>Quantity: {{ product.quantity }}</p>
+                    <p>Price: ₹{{ product.price }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>  -->
+</body>
+</html

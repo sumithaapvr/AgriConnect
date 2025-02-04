@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        form {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            resize: none;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #1e7e34;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+            color: #d9534f;
+        }
+
+        li {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 600px) {
+            form {
+                padding: 20px;
+                max-width: 90%;
+            }
+        }
+    </style>
+    <script>
+        function validateQuantity() 
+        {
+            // Assuming product_quantity is passed through URL and stored in the template
+            const maxQuantity = {{ product_quantity }};
+            const enteredQuantity = document.getElementById('quantity').value;
+
+            if (enteredQuantity > maxQuantity) {
+                alert(`Please enter a quantity less than or equal to ${maxQuantity}.`);
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h2>Order Product</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('order_product', product_price=product_price, product_quantity=product_quantity) }}" method="POST" onsubmit="return validateQuantity()">
+        <label for="name">Customer Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address">Customer Address:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label for="phone">Customer Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="quantity">Quantity (Max: {{ product_quantity }}):</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>

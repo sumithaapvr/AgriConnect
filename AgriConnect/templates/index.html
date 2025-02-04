@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-image: url('/static/img/image.png'); /* Set background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Full viewport height */
+            margin: 0;
+        }
+        .language-select {
+            background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+            max-width: 400px;
+             /* Responsive width */
+        }
+        .language-select h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .language-option {
+            display: block;
+            margin: 12px 0;
+            padding: 12px 0;
+            font-size: 20px;
+            color: #fff;
+            background-color: #0288d1; /* Lighter shade for the button */
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Animation for hover */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+        .language-option:hover {
+            background-color: #0277bd; /* Darker on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="language-select">
+        <h1>Select Language:</h1>
+        <a href="/select_language?lang=ta" class="language-option">தமிழ் (Tamil)</a>
+        <a href="/select_language?lang=en" class="language-option">English</a>
+        <a href="/select_language?lang=ml" class="language-option">മലയാളം (Malayalam)</a>
+        <a href="/select_language?lang=te" class="language-option">తెలుగు (Telugu)</a>
+        <a href="/select_language?lang=kn" class="language-option">ಕನ್ನಡ (Kannada)</a>
+        <a href="/select_language?lang=hi" class="language-option">हिंदी (Hindi)</a>
+    </div>
+</body>
+</html>
+

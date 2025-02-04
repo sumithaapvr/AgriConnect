@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <style>
+        body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #2c3e50;
+}
+
+nav {
+    background-color: #2c3e50;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: #ecf0f1;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+.language-dropdown select {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+header {
+    background-image: url('static/img/h2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 103vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.container h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    color: #7f8c8d;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.values-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    flex: 1 1 20%;
+    padding: 1.5rem;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.value-card h3 {
+    color: #e74c3c;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-card p {
+    color: #2c3e50;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #bdc3c7;
+}
+
+.footer p:last-child {
+    margin-top: 0.5rem;
+    color: #7f8c8d;
+}
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Farmers' Hub</div>
+        <ul>
+            <li class="language-dropdown">
+                <select onchange="location = this.value;">
+                    <option value="">Select Language</option>
+                    <option value="/select_language?lang=ta">தமிழ் (Tamil)</option>
+                    <option value="/select_language?lang=en">English</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <div>
+            <h1>Welcome to the place where natural flavour is born!</h1>
+            <p>Your one-stop destination for premium products</p>
+            <a href="#" class="btn">Explore Now</a>
+        </div>
+    </header>
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Farmers' Hub is dedicated to offering the best quality grains and spices directly from our trusted farmers. Explore our diverse selection of fresh, natural products and find the perfect ingredients for your kitchen or business.</p>
+    </div>
+
+    <div class="container">
+        <h2>Features</h2>
+        <div class="values-container">
+            <div class="value-card">
+                <h3>Direct Deals</h3>
+                <p>Buyers can connect and buy directly from farmers without any middlemen.</p>
+            </div>
+            <div class="value-card">
+                <h3>Easy Communication</h3>
+                <p>Buyers can message or call farmers to ask about products and prices.</p>
+            </div>
+            <div class="value-card">
+                <h3>Custom Orders</h3>
+                <p>Buyers can request specific products and quantities from farmers.</p>
+            </div>
+            <div class="value-card">
+                <h3>Fair Pricing</h3>
+                <p>Buyers and farmers can negotiate prices directly.</p>
+            </div>
+            <div class="value-card">
+                <h3>Trustworthy Reviews</h3>
+                <p>Buyers can check reviews of farmers to ensure quality.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Farmers' Hub</h2>
+        <p>Connecting Farmers and Buyers Directly for Fresh, Quality Produce.</p>
+        <p>© 2024 Farmers' Hub. All rights reserved.</p>
+    </div>
+</body>
+</html>

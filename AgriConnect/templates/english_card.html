@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ lang_code }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titles[lang_code] }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            background-color: #f9f9f9;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2d2d2d;
+        }
+
+        .card p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Farmer Card -->
+        <div class="card" onclick="window.location.href='{{ url_for('farmer') }}'">
+            <h1>{{ cards['farmer'][lang_code] }}</h1>
+        </div>
+
+        <!-- Buyer Card -->
+        <div class="card" onclick="window.location.href='{{ url_for('buyer') }}'">
+            <h1>{{ cards['buyer'][lang_code] }}</h1>
+        </div>
+    </div>
+</body>
+</html>

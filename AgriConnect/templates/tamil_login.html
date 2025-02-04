@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>விவசாயி உள்நுழைவு</title>
+    <style>
+        body {
+            background-image: url('static/img/sbg.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .otp-button {
+            margin-top: 10px;
+            background-color: #007bff;
+        }
+
+        .otp-button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container form {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>விவசாயி உள்நுழைவு</h1>
+        <form action="{{ url_for('tamil_login') }}" method="POST">
+            <label for="phone">தொலைபேசி எண்:</label>
+            <input type="text" id="phone" name="phone" placeholder="உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்" required>
+            <label for="otp">OTP:</label>
+            <input type="text" id="otp" name="otp" placeholder="உங்கள் OTP-ஐ உள்ளிடவும்" required>
+            <button type="submit">உள்நுழை</button>
+        </form>
+        <form id="otp-form" onsubmit="handleOtpRequest(event)">
+            <input type="hidden" name="phone" id="otp_phone">
+            <button type="submit" class="otp-button">OTP பெற</button>
+        </form>
+    </div>
+
+    <script>
+        function handleOtpRequest(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var phoneInput = document.getElementById('phone').value;
+            var otp = generateOtp(); // Simulate OTP generation
+            alert("Your OTP is: " + otp);
+
+            // Set the OTP value in the OTP input field
+            document.getElementById('otp').value = otp;
+
+            // Optionally, you can set the phone number in the hidden input field
+            document.getElementById('otp_phone').value = phoneInput;
+        }
+
+        function generateOtp() {
+            // Simulate OTP generation (e.g., random number)
+            return Math.floor(100000 + Math.random() * 900000);
+        }
+    </script>
+</body>
+</html>

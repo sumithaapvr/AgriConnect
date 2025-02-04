@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தானியங்கள் மற்றும் மசாலா அட்டைகள்</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .top-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .top-button:hover {
+            background-color: #0056b3;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 70px; /* Added margin to avoid overlap with top button */
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Button -->
+    <button class="top-button" onclick="window.location.href='/home'">முகப்பு</button>
+
+    <h1>தானியங்கள் மற்றும் மசாலா அட்டைகள்</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="/static/img/turmeric.jpg" alt="மஞ்சள்">
+            <h2>மஞ்சள்</h2>
+            <p>மஞ்சள் ஒரு சுவையூட்டும் மற்றும் மருத்துவ குணமுள்ள மசாலாவாகும்.</p>
+            <button onclick="window.location.href='/register?product=turmeric'">பதிவு செய்ய</button>
+        </div>
+        <div class="card">
+            <img src="/static/img/wheat.jpg" alt="கோதுமை">
+            <h2>கோதுமை</h2>
+            <p>கோதுமை உலகளவில் முக்கியமான தானியமாக கருதப்படுகிறது.</p>
+            <button onclick="window.location.href='/register?product=wheat'">பதிவு செய்ய</button>
+        </div>
+        <div class="card">
+            <img src="/static/img/rice.jpg" alt="அரிசி">
+            <h2>அரிசி</h2>
+            <p>அரிசி தெற்காசியர்களின் முக்கிய உணவாக உள்ளது.</p>
+            <button onclick="window.location.href='/register?product=rice'">பதிவு செய்ய</button>
+        </div>
+    </div>
+</body>
+</html>

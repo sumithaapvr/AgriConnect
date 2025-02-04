@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .summary-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .order-details p {
+            font-size: 16px;
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="summary-container">
+        <h1>Order Summary</h1>
+        <div class="order-details">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Address:</strong> {{ address }}</p>
+            <p><strong>Phone:</strong> {{ phone }}</p>
+            <p><strong>Product:</strong> {{ product_name }}</p>
+            <p><strong>Quantity:</strong> {{ quantity }}</p>
+            <p class="total-price">Total Price: ${{ total_price }}</p>
+        </div>
+        <a href="/" class="back-button">Back to Home</a>
+    </div>
+
+</body>
+</html>
