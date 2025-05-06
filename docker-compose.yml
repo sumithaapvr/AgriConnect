@@ -3,4 +3,4 @@ services:
   react-capstone:
     image: "agriconnect"
     ports:
-      - "98:80"
+      - "1203:80"
